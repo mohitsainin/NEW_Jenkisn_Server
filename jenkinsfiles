@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'NEW_JENKINS_SERVER', url: 'https://github.com/8SureshMaurya/Jenkins.git'
+                git branch: 'NEW_JENKINS_SERVER', url: 'https://github.com/mohitsainin/NEW_Jenkisn_Server.git'
             }
         }
         stage('Terraform init') {
