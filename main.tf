@@ -185,7 +185,7 @@ resource "aws_instance" "bastion" {
   ami                    = "ami-04a81a99f5ec58529"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.Public_SG.id]
-  key_name               = "NVir"
+  key_name               = "jenkins"
   subnet_id              = aws_subnet.public_1.id
   tags = {
     Name = "ninja-bastion-host"
@@ -247,7 +247,7 @@ resource "aws_instance" "Jenkins_server" {
   ami                    = "ami-04a81a99f5ec58529"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.Private_SG.id]
-  key_name               = "NVir"
+  key_name               = "jenkins"
   subnet_id              = aws_subnet.private_1.id
   user_data              = file("install_jenkins.sh")
   tags = {
